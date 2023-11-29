@@ -1,0 +1,136 @@
+{
+  "cocktails": {
+    "Disaronno Disarita": {
+      "ingredients": {
+        "Disaronno": "1.5 oz",
+        "Tequila": "1 oz",
+        "Lime Juice": "1 oz",
+        "Simple Syrup": "0.5 oz"
+      }
+    },
+    "Disarono Sour": {
+      "ingredients": {
+        "Disaronno": "1.5 oz",
+        "Lime Juice": "1 oz",
+        "Simple Syrup": "0.5 oz"
+      }
+    },
+    "Margarita": {
+      "ingredients": {
+        "Tequila": "1.5 oz",
+        "Lime Juice": "1 oz",
+        "Simple Syrup": "0.5 oz"
+      }
+    },
+    "Cosmopolitan": {
+      "ingredients": {
+        "Vodka": "1.5 oz",
+        "Triple Sec": "1 oz",
+        "Lime Juice": "0.5 oz",
+        "Cranberry Juice": "0.5 oz"
+      }
+    },
+    "White Lady": { 
+      "ingredients": {
+        "Gin": "1.5 oz",
+        "Triple Sec": "1 oz",
+        "Lime Juice": "0.5 oz"
+      }
+    },
+    "Lime Drop": {
+      "ingredients": {
+        "Vodka": "1.5 oz",
+        "Triple Sec": "1 oz",
+        "Lime Juice": "0.5 oz",
+        "Simple Syrup": "0.5 oz"
+      }	  
+    },
+    "Pegu Club": {
+      "ingredients": {
+        "Gin": "1.5 oz",
+        "Triple Sec": "1 oz",
+        "Lime Juice": "0.5 oz",
+        "Orange Bitters": "2 dashes"
+      }
+    },
+    "Bees Knees": {
+      "ingredients": {
+        "Gin": "1.5 oz",
+        "Honey Syrup": "0.75 oz",
+        "Lime Juice": "0.75 oz"
+      } 
+    },
+    "Michelada": { 
+      "ingredients": {
+        "Beer": "1 bottle",
+        "Lime Juice": "1 oz",
+        "Worcestershire Sauce": "0.5 oz",
+        "Hot Sauce": "0.5 oz"
+      }
+    },  
+    "Dr.Pepper???": {
+      "ingredients": {
+        "Beer": "1 bottle",
+        "Disaronno": "1 oz"
+      }
+    }
+  },
+  "ingredients": {
+    "Disaronno": {
+      "type": "liqueur",
+      "description": "Amaretto"
+    },
+    "Tequila": {
+      "type": "spirit",
+      "description": "Tequila"
+    },
+    "Lime Juice": {
+      "type": "juice",
+      "description": "Lime Juice"
+    },
+    "Simple Syrup": {
+      "type": "syrup",
+      "description": "Simple Syrup"
+    },
+    "Lime Juice": {
+      "type": "juice",
+      "description": "Lime Juice"
+    },
+    "Vodka": {
+      "type": "spirit",
+      "description": "Vodka"
+    },
+    "Triple Sec": {
+      "type": "liqueur",
+      "description": "Triple Sec"
+    },
+    "Cranberry Juice": {
+      "type": "juice",
+      "description": "Cranberry Juice"
+    },
+    "Gin": {
+      "type": "spirit",
+      "description": "Gin"
+    },
+    "Orange Bitters": {
+      "type": "bitters",
+      "description": "Orange Bitters"
+    },
+    "Honey Syrup": {
+      "type": "syrup",
+      "description": "Honey Syrup"
+    },
+    "Beer": {
+      "type": "beer",
+      "description": "Beer"
+    },
+    "Worcestershire Sauce": {
+      "type": "sauce",
+      "description": "Worcestershire Sauce"
+    },
+    "Hot Sauce": {
+      "type": "sauce",
+      "description": "Hot Sauce"
+    }
+  }
+}
