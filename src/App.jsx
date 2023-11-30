@@ -88,10 +88,10 @@ const App = () => {
                 <LiaLemon />
               </Box>  
               <Text as={'h2'}> 
-                Cocktails 
+                Ingredients 
               </Text>
             </Box>
-            <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
+            <Divider orientation='horizontal' borderWidth={'1px'} borderColor="black" />
             <Box m={[4, 2]}>  
               <Grid
                 h='200px'
@@ -133,7 +133,7 @@ const App = () => {
                 Cocktails 
               </Text>
             </Box>
-          <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
+          <Divider orientation='horizontal' borderWidth={'1px'} borderColor="black" />
           <Grid
             templateRows='repeat(3, 1fr)'
             templateColumns='repeat(3, 1fr)'
@@ -172,7 +172,7 @@ const App = () => {
                   </Box>   
                   <Box className='cocktails-list-item--title'> {key} </Box>
                   </Box>
-                  <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
+                  <Divider orientation='horizontal' borderWidth={'1px'} borderColor="black" />
                   <Box className='cocktails-list-item--ingredients'> 
                     {Object.entries(value.ingredients).map(([ingredientName, ingredientAmount]) => {
                       return ( 
