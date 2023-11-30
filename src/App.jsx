@@ -3,9 +3,9 @@ import React from 'react'
 import './App.scss'
 
 import cocktailsData from './data/cocktails.json'
-import { Box, Text, Flex, Divider, Checkbox, Heading, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Text, Flex, Divider, Checkbox, Heading, Grid, GridItem, Img } from '@chakra-ui/react'
 
-import { LiaCocktailSolid } from "react-icons/lia";
+import { LiaCocktailSolid, LiaLemon  } from "react-icons/lia";
 
 
 const App = () => {
@@ -65,88 +65,143 @@ const App = () => {
       return !cocktailIngredients[selectedIngredientes]
     } )
 
-    console.log(areExtraIngredientesSelected)
-
     return areIngredientsSelected && !areExtraIngredientesSelected
   }
+  const [page, setPage] = React.useState(0)
 
-  return (
+  const [catIndex] = React.useState(Math.floor(Math.random() * 6) + 1)
+
+  return (  
     <Box className='book'>
       <Box className='navigation'>
         <div className='navigation--container'>
-          <div className='navigation--element' onClick="setPage(evidencePage)"> Bar </div>
-          <div className='navigation--element' onClick="setPage(ghostPageOffset)"> Ghosts</div>
+          <div className='navigation--element' onClick={() => setPage(0)}> Bar </div>
+          <div className='navigation--element' onClick={() => setPage(1)}> Cocktails </div>
+          <div className='navigation--element' onClick={() => setPage(2)}> Ghosts </div>
         </div>
       </Box>
-      <Box className='page'>
-        <Box className='evidence-container'>
-          <Text as={'h2'}> 
-            Ingredients 
-          </Text>
+      {page === 0 && (
+        <Box className='page page-1'>
+          <Box className='evidence-container'>
+            <Box className='cocktails-container--header'>
+              <Box>
+                <LiaLemon />
+              </Box>  
+              <Text as={'h2'}> 
+                Cocktails 
+              </Text>
+            </Box>
+            <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
+            <Box m={[4, 2]}>  
+              <Grid
+                h='200px'
+                templateRows='repeat(5, 1fr)'
+                templateColumns='repeat(3, 1fr)'
+                gap={4}
+                mt={8}
+              >  
+                {Object.keys(ingredients).map((ingredient, index) => {
+                  return (
+                    <GridItem key={index} colSpan={1}>
+                      <Flex>
+                        <Checkbox
+                          isChecked={selection[ingredient] === "selected"}
+                          onChange={e => handleIngredientCheck(ingredient, e)}
+                          size='lg'
+                          className={`
+                            ingredient-checkbox
+                            ingredient-checkbox--${selection[ingredient] === "selected" ? "selected" : ""}
+                            ingredient-checkbox--${selection[ingredient] === "removed" ? "removed" : ""}
+                          `}
+                          colorScheme='teal'
+                        >
+                          {ingredient} 
+                        </Checkbox>
+                    </Flex>
+                    </GridItem> 
+                    )
+                })}
+              </Grid>
+            </Box>
+          </Box>
+          <Box className="cocktails-container">
+            <Box className='cocktails-container--header'>
+              <Box>
+                <LiaCocktailSolid />
+              </Box>  
+              <Text as={'h2'}> 
+                Cocktails 
+              </Text>
+            </Box>
           <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
-          <Box m={[4, 2]}>  
-            <Grid
-              h='200px'
-              templateRows='repeat(5, 1fr)'
-              templateColumns='repeat(3, 1fr)'
-              gap={4}
-              mt={8}
-            >  
-              {Object.keys(ingredients).map((ingredient, index) => {
-                return (
-                  <GridItem key={index} colSpan={1}>
-                    <Flex>
-                      <Checkbox
-                        isChecked={selection[ingredient] === "selected"}
-                        onChange={e => handleIngredientCheck(ingredient, e)}
-                        size='lg'
-                        className={`
-                          ingredient-checkbox
-                          ingredient-checkbox--${selection[ingredient] === "selected" ? "selected" : ""}
-                          ingredient-checkbox--${selection[ingredient] === "removed" ? "removed" : ""}
-                        `}
-                        colorScheme='teal'
-                      >
-                        {ingredient} 
-                      </Checkbox>
-                  </Flex>
-                  </GridItem> 
-                  )
-              })}
-            </Grid>
+          <Grid
+            templateRows='repeat(3, 1fr)'
+            templateColumns='repeat(3, 1fr)'
+            gap={4}
+            mt={8}
+          >  
+            {Object.keys(cocktails).map((cocktail, index) => {
+              return (
+                <GridItem key={index} colSpan={1} >
+                  <Text className={`
+                    cocktail-name
+                    cocktail-name--${isCocktailAvailable(cocktail) ? "available" : ""}
+                  `}>
+                    {cocktail}
+                  </Text>
+                </GridItem> 
+                )
+            })}
+              </Grid>
           </Box>
         </Box>
-        <Box className="cocktails-container">
-          <Box className='cocktails-container--header'>
-            <Box>
-              <LiaCocktailSolid />
-            </Box>  
-            <Text as={'h2'}> 
-              Cocktails 
-            </Text>
-          </Box>
-        <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
-        <Grid
-          templateRows='repeat(3, 1fr)'
-          templateColumns='repeat(3, 1fr)'
-          gap={4}
-          mt={8}
-        >  
-          {Object.keys(cocktails).map((cocktail, index) => {
-            return (
-              <GridItem key={index} colSpan={1} >
-                <Text className={`
-                  cocktail-name
-                  cocktail-name--${isCocktailAvailable(cocktail) ? "available" : ""}
-                `}>
-                  {cocktail}
-                </Text>
-              </GridItem> 
+      )}
+      {page === 1 && (
+      <Box className='page page-2'>
+        <Box className='cocktails-list-container'>
+          <Text as={'h2'}> 
+            Cocktails 
+          </Text>
+          <Box className='cocktails-list'>
+            {Object.entries(cocktails).map(([key, value]) => {
+              return (
+                <Box key={`coktail-${key.toLowerCase()}`} className='cocktails-list-item'>
+                  <Box style={{ display: 'flex', alignItems: 'center'}}>
+                  <Box pb={'6px'} mr={'4px'}>
+                    <LiaCocktailSolid size={'18px'}/>
+                  </Box>   
+                  <Box className='cocktails-list-item--title'> {key} </Box>
+                  </Box>
+                  <Divider orientation='horizontal' style={{ borderBlockColor: "#242424" }} />
+                  <Box className='cocktails-list-item--ingredients'> 
+                    {Object.entries(value.ingredients).map(([ingredientName, ingredientAmount]) => {
+                      return ( 
+                        <Box key={`ingredient-${ingredientName.toLowerCase()}`} className='cocktails-list-item--ingredient'> 
+                          {ingredientName} - {ingredientAmount} 
+                        </Box>)
+                      }  
+                    )} 
+                  </Box>
+                </Box>
               )
-          })}
-            </Grid>
+            })
+          } 
+          </Box>
         </Box>
       </Box>
+      )}
+      {page === 2 && (
+      <Box className='page page-2'>
+        <Box className='ghost-container'>
+          <Box className='ghost-borders'> 
+            <Img src={`cat_${catIndex}.jpg`} />
+          </Box>
+        </Box>
+      </Box>
+      )}
+      
+      { page !== 1 && <Box className='flip' /> }
+
     </Box>
   )
 }

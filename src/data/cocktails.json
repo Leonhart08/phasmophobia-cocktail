@@ -19,7 +19,8 @@
       "ingredients": {
         "Tequila": "1.5 oz",
         "Lime Juice": "1 oz",
-        "Simple Syrup": "0.5 oz"
+        "Simple Syrup": "0.5 oz",
+        "Triple Sec": "0.5 oz"  
       }
     },
     "Cosmopolitan": {
@@ -43,14 +44,14 @@
         "Triple Sec": "1 oz",
         "Lime Juice": "0.5 oz",
         "Simple Syrup": "0.5 oz"
-      }	  
+      }
     },
     "Pegu Club": {
       "ingredients": {
         "Gin": "1.5 oz",
         "Triple Sec": "1 oz",
         "Lime Juice": "0.5 oz",
-        "Orange Bitters": "2 dashes"
+        "Bitters": "2 dashes"
       }
     },
     "Bees Knees": {
@@ -64,7 +65,6 @@
       "ingredients": {
         "Beer": "1 bottle",
         "Lime Juice": "1 oz",
-        "Worcestershire Sauce": "0.5 oz",
         "Hot Sauce": "0.5 oz"
       }
     },  
@@ -72,6 +72,14 @@
       "ingredients": {
         "Beer": "1 bottle",
         "Disaronno": "1 oz"
+      }
+    },
+    "Pisco Sour": {
+      "ingredients": {
+        "Pisco": "1.5 oz",
+        "Lime Juice": "1 oz",
+        "Simple Syrup": "0.5 oz",
+        "Bitters": "2 dashes"
       }
     }
   },
@@ -112,7 +120,7 @@
       "type": "spirit",
       "description": "Gin"
     },
-    "Orange Bitters": {
+    "Bitters": {
       "type": "bitters",
       "description": "Orange Bitters"
     },
@@ -124,13 +132,13 @@
       "type": "beer",
       "description": "Beer"
     },
-    "Worcestershire Sauce": {
-      "type": "sauce",
-      "description": "Worcestershire Sauce"
-    },
     "Hot Sauce": {
       "type": "sauce",
       "description": "Hot Sauce"
+    },
+    "Pisco": {
+      "type": "spirit",
+      "description": "Pisco"
     }
   }
 }
